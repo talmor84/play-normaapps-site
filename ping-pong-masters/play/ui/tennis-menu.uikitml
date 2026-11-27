@@ -65,6 +65,18 @@
   .build:dark {
     color: #9a9ca3;
   }
+  .vol {
+    color: #3a3b40;
+    font-size: 14px;
+    width: 92px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .vol:dark {
+    color: #d9dbe2;
+  }
+
   .consent {
     flex-direction: column;
     gap: 8px;
@@ -98,7 +110,7 @@
 </style>
 <Panel class="menu">
   <div id="menu-eyebrow" class="eyebrow">NORMA SPATIAL LAB</div>
-  <div class="title">Table tennis</div>
+  <div class="title">Ping Pong Masters</div>
   <div class="label">GAME</div>
   <div class="row">
     <Button id="btn-match" class="grow">
@@ -108,7 +120,7 @@
       <ButtonLabel>Practice</ButtonLabel>
     </Button>
   </div>
-  <div class="label">OPPONENT</div>
+  <div class="label">OPPONENT: MASTER KAITO</div>
   <div class="row">
     <Button id="btn-easy" class="grow">
       <ButtonLabel>Easy</ButtonLabel>
@@ -177,19 +189,18 @@
       <ButtonLabel>Back to lab</ButtonLabel>
     </Button>
   </div>
-  <div class="label">MASTER KAITO</div>
+  <div class="label">KAITO'S VOICE</div>
   <div class="row">
-    <Button id="btn-talk" class="grow">
-      <ButtonIcon>
-        <Mic></Mic>
-      </ButtonIcon>
-      <ButtonLabel id="talk-label">Talk</ButtonLabel>
+    <Button id="btn-trash" class="grow">
+      <ButtonLabel id="trash-label">Trash talk: Competitive</ButtonLabel>
     </Button>
-    <Button id="btn-mic" class="grow">
-      <ButtonIcon>
-        <MicOff></MicOff>
-      </ButtonIcon>
-      <ButtonLabel id="mic-label">Mic off</ButtonLabel>
+    <Button id="btn-coach" class="grow">
+      <ButtonLabel id="coach-label">Coaching: Occasional tips</ButtonLabel>
+    </Button>
+  </div>
+  <div class="row">
+    <Button id="btn-chat" class="grow">
+      <ButtonLabel id="chat-label">Talks: Normal</ButtonLabel>
     </Button>
     <Button id="btn-voice-mute" class="grow">
       <ButtonIcon>
@@ -199,17 +210,48 @@
     </Button>
   </div>
   <div class="row">
-    <Button id="btn-trash" class="grow">
-      <ButtonLabel id="trash-label">Trash talk 2</ButtonLabel>
+    <Button id="btn-vol-down">
+      <ButtonIcon>
+        <Volume1></Volume1>
+      </ButtonIcon>
     </Button>
-    <Button id="btn-chat" class="grow">
-      <ButtonLabel id="chat-label">Chat: normal</ButtonLabel>
+    <div id="vol-label" class="vol">Voice 80%</div>
+    <Button id="btn-vol-up">
+      <ButtonIcon>
+        <Volume2></Volume2>
+      </ButtonIcon>
     </Button>
-    <Button id="btn-adult" class="grow">
+  </div>
+  <div class="row">
+    <Button id="btn-talk" class="grow" style="display: none">
+      <ButtonIcon>
+        <Mic></Mic>
+      </ButtonIcon>
+      <ButtonLabel id="talk-label">Talk</ButtonLabel>
+    </Button>
+    <Button id="btn-mic" class="grow" style="display: none">
+      <ButtonIcon>
+        <MicOff></MicOff>
+      </ButtonIcon>
+      <ButtonLabel id="mic-label">Mic off</ButtonLabel>
+    </Button>
+    <Button id="btn-adult" class="grow" style="display: none">
       <ButtonLabel id="adult-label">Swearing off</ButtonLabel>
     </Button>
-    <Button id="btn-voice-pick" class="grow">
+    <Button id="btn-voice-pick" class="grow" style="display: none">
       <ButtonLabel id="voice-pick-label">Voice: Kaito local</ButtonLabel>
+    </Button>
+  </div>
+  <div class="label">ROOM AND FEEL</div>
+  <div class="row">
+    <Button id="btn-env-dojo" class="grow">
+      <ButtonLabel>Dojo</ButtonLabel>
+    </Button>
+    <Button id="btn-env-arena" class="grow">
+      <ButtonLabel>Arena</ButtonLabel>
+    </Button>
+    <Button id="btn-haptics" class="grow">
+      <ButtonLabel id="haptics-label">Haptics: Normal</ButtonLabel>
     </Button>
   </div>
   <div id="consent-box" class="consent" style="display: none">
