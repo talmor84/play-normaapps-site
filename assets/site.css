@@ -127,7 +127,7 @@ section.band { padding-block: 88px; border-bottom: 1px solid var(--lattice); }
 .qr { width: 132px; height: 132px; background: var(--paper); padding: 10px; }
 .qr svg { width: 100%; height: 100%; display: block; }
 .urlbox { display: flex; align-items: stretch; border: 1px solid var(--lattice-strong); min-width: 0; }
-.urlbox .url { flex: 1; min-width: 0; padding: 12px 14px; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.urlbox .url { flex: 1; min-width: 0; padding: 12px 14px; font-size: 15px; overflow-wrap: anywhere; }
 .urlbox button { border: 0; border-left: 1px solid var(--lattice-strong); background: transparent; color: var(--paper); font: 500 13px/1 var(--body); padding: 0 14px; cursor: pointer; }
 .urlbox button:hover { background: var(--timber-2); }
 .send .or { font-size: 13px; color: var(--dim); }
@@ -143,6 +143,8 @@ section.band { padding-block: 88px; border-bottom: 1px solid var(--lattice); }
 .g-intro { display: grid; gap: 18px; align-content: start; }
 .g-intro h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1; }
 .g-intro .lede { font-size: 18px; max-width: 54ch; }
+.opp { font: 500 13px/1.4 var(--mono, var(--body)); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: -8px; }
+.opp b { color: var(--paper); font-weight: 600; }
 .playcard { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px); align-self: start; background: var(--timber); border: 1px solid var(--lattice-strong); padding: 24px; display: grid; gap: 16px; }
 .playcard .price { display: flex; justify-content: space-between; align-items: baseline; }
 .playcard .price b { font: 800 28px/1 var(--display); color: var(--paper); }

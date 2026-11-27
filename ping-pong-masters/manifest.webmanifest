@@ -1,0 +1,14 @@
+{
+  "name": "Ping Pong Masters",
+  "short_name": "Ping Pong Masters",
+  "description": "Seated table tennis in VR against Master Kaito. By Norma.",
+  "start_url": "/ping-pong-masters/play/",
+  "scope": "/ping-pong-masters/",
+  "display": "fullscreen",
+  "background_color": "#0c0a09",
+  "theme_color": "#0c0a09",
+  "icons": [
+    { "src": "/ping-pong-masters/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/ping-pong-masters/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
