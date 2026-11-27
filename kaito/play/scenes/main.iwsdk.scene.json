@@ -1,0 +1,948 @@
+{
+  "version": "iwsdk.scene.v1",
+  "units": "meters",
+  "components": {
+    "com.iwsdk.components.DomeGradient": {
+      "sky": [
+        0.85,
+        0.82,
+        0.78,
+        1
+      ],
+      "equator": [
+        0.85,
+        0.82,
+        0.78,
+        1
+      ],
+      "ground": [
+        0.6,
+        0.5,
+        0.42,
+        1
+      ],
+      "elevationDeg": 20,
+      "azimuthDeg": 0,
+      "dither": true
+    },
+    "com.iwsdk.components.IBLGradient": {
+      "sky": [
+        0.86,
+        0.82,
+        0.76,
+        1
+      ],
+      "equator": [
+        0.8,
+        0.74,
+        0.66,
+        1
+      ],
+      "ground": [
+        0.5,
+        0.38,
+        0.28,
+        1
+      ],
+      "intensity": 0.35
+    }
+  },
+  "environment": {
+    "toneMapping": "aces",
+    "exposure": 1.05,
+    "shadows": true,
+    "shadowMapType": "pcf"
+  },
+  "resources": {},
+  "nodes": [
+    {
+      "id": "lab-floor",
+      "name": "Floor",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "lab-floor",
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0,
+          -0.05,
+          0
+        ]
+      },
+      "components": {
+        "LocomotionEnvironment": {},
+        "PhysicsBody": {
+          "state": "STATIC"
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            5.0,
+            0.1,
+            5.0
+          ],
+          "friction": 0.6
+        }
+      }
+    },
+    {
+      "id": "wall-back",
+      "name": "Wall Back",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "lab-wall",
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0,
+          1.4,
+          -2.55
+        ],
+        "rotationDeg": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": {
+        "PhysicsBody": {
+          "state": "STATIC"
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            5.0,
+            2.8,
+            0.1
+          ],
+          "friction": 0.6
+        }
+      }
+    },
+    {
+      "id": "wall-front",
+      "name": "Wall Front",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "lab-wall",
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0,
+          1.4,
+          2.55
+        ],
+        "rotationDeg": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": {
+        "PhysicsBody": {
+          "state": "STATIC"
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            5.0,
+            2.8,
+            0.1
+          ],
+          "friction": 0.6
+        }
+      }
+    },
+    {
+      "id": "wall-left",
+      "name": "Wall Left",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "lab-wall",
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -2.55,
+          1.4,
+          0
+        ],
+        "rotationDeg": [
+          0,
+          90,
+          0
+        ]
+      },
+      "components": {
+        "PhysicsBody": {
+          "state": "STATIC"
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            5.0,
+            2.8,
+            0.1
+          ],
+          "friction": 0.6
+        }
+      }
+    },
+    {
+      "id": "wall-right",
+      "name": "Wall Right",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "lab-wall",
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          2.55,
+          1.4,
+          0
+        ],
+        "rotationDeg": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "components": {
+        "PhysicsBody": {
+          "state": "STATIC"
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            5.0,
+            2.8,
+            0.1
+          ],
+          "friction": 0.6
+        }
+      }
+    },
+    {
+      "id": "ceiling",
+      "name": "Ceiling",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "lab-ceiling"
+      },
+      "transform": {
+        "position": [
+          0,
+          2.8299999999999996,
+          0
+        ]
+      }
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "content": {
+        "type": "asset",
+        "asset": "lab-window"
+      },
+      "transform": {
+        "position": [
+          -2.48,
+          1.55,
+          -0.7
+        ],
+        "rotationDeg": [
+          0,
+          90,
+          0
+        ]
+      }
+    },
+    {
+      "id": "rug",
+      "name": "Rug",
+      "content": {
+        "type": "asset",
+        "asset": "lab-rug",
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0,
+          0,
+          -0.55
+        ]
+      }
+    },
+    {
+      "id": "shelf",
+      "name": "Shelf",
+      "content": {
+        "type": "asset",
+        "asset": "lab-shelf",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          1.3,
+          0,
+          -2.33
+        ]
+      }
+    },
+    {
+      "id": "stool",
+      "name": "Stool",
+      "content": {
+        "type": "asset",
+        "asset": "lab-stool",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.95,
+          0,
+          -0.95
+        ]
+      }
+    },
+    {
+      "id": "table-top",
+      "name": "Table Top",
+      "content": {
+        "type": "asset",
+        "asset": "table-top",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0,
+          0.72,
+          -0.75
+        ]
+      },
+      "components": {
+        "LabTableTop": {},
+        "PhysicsBody": {
+          "state": "KINEMATIC"
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            1.2,
+            0.04,
+            0.7
+          ],
+          "friction": 0.8
+        }
+      }
+    },
+    {
+      "id": "table-legs",
+      "name": "Table Legs",
+      "content": {
+        "type": "asset",
+        "asset": "table-legs",
+        "castShadow": true
+      },
+      "transform": {
+        "position": [
+          0,
+          0,
+          -0.75
+        ]
+      },
+      "components": {
+        "LabTableLegs": {}
+      }
+    },
+    {
+      "id": "block-coral",
+      "name": "Block Coral",
+      "content": {
+        "type": "asset",
+        "asset": "block-coral",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.45,
+          0.777,
+          -0.86
+        ],
+        "rotationDeg": [
+          0,
+          8,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "block"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            0.07,
+            0.07,
+            0.07
+          ],
+          "density": 600,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "OneHandGrabbable": {},
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "block-ochre",
+      "name": "Block Ochre",
+      "content": {
+        "type": "asset",
+        "asset": "block-ochre",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.35,
+          0.777,
+          -0.91
+        ],
+        "rotationDeg": [
+          0,
+          -12,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "block"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            0.07,
+            0.07,
+            0.07
+          ],
+          "density": 600,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "OneHandGrabbable": {},
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "block-teal",
+      "name": "Block Teal",
+      "content": {
+        "type": "asset",
+        "asset": "block-teal",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.25,
+          0.777,
+          -0.85
+        ],
+        "rotationDeg": [
+          0,
+          20,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "block"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            0.07,
+            0.07,
+            0.07
+          ],
+          "density": 600,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "OneHandGrabbable": {},
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "block-cream",
+      "name": "Block Cream",
+      "content": {
+        "type": "asset",
+        "asset": "block-cream",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.15,
+          0.777,
+          -0.9
+        ],
+        "rotationDeg": [
+          0,
+          -4,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "block"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            0.07,
+            0.07,
+            0.07
+          ],
+          "density": 600,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "OneHandGrabbable": {},
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "tall-block-ink",
+      "name": "Tall Block Ink",
+      "content": {
+        "type": "asset",
+        "asset": "tall-block-ink",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.03,
+          0.817,
+          -0.88
+        ],
+        "rotationDeg": [
+          0,
+          10,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "block"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            0.05,
+            0.15,
+            0.05
+          ],
+          "density": 600,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "OneHandGrabbable": {},
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "tall-block-sage",
+      "name": "Tall Block Sage",
+      "content": {
+        "type": "asset",
+        "asset": "tall-block-sage",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0.06,
+          0.817,
+          -0.85
+        ],
+        "rotationDeg": [
+          0,
+          -15,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "block"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Box",
+          "dimensions": [
+            0.05,
+            0.15,
+            0.05
+          ],
+          "density": 600,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "OneHandGrabbable": {},
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "cup-cream",
+      "name": "Cup Cream",
+      "content": {
+        "type": "asset",
+        "asset": "cup-cream",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0.19,
+          0.792,
+          -0.89
+        ],
+        "rotationDeg": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "cup"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Cylinder",
+          "dimensions": [
+            0.037,
+            0.1,
+            0
+          ],
+          "density": 400,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "DistanceGrabbable": {
+          "movementMode": "MoveTowardsTarget"
+        },
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "cup-teal",
+      "name": "Cup Teal",
+      "content": {
+        "type": "asset",
+        "asset": "cup-teal",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          0.29,
+          0.792,
+          -0.85
+        ],
+        "rotationDeg": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "cup"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Cylinder",
+          "dimensions": [
+            0.037,
+            0.1,
+            0
+          ],
+          "density": 400,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "DistanceGrabbable": {
+          "movementMode": "MoveTowardsTarget"
+        },
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "ball-coral",
+      "name": "Ball Coral",
+      "content": {
+        "type": "asset",
+        "asset": "ball-coral",
+        "castShadow": true,
+        "receiveShadow": true
+      },
+      "transform": {
+        "position": [
+          -0.42,
+          0.787,
+          -0.58
+        ],
+        "rotationDeg": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": {
+        "LabProp": {
+          "kind": "ball"
+        },
+        "PhysicsBody": {
+          "state": "DYNAMIC",
+          "linearDamping": 0.1,
+          "angularDamping": 0.3
+        },
+        "PhysicsShape": {
+          "shape": "Sphere",
+          "dimensions": [
+            0.045,
+            0,
+            0
+          ],
+          "density": 300,
+          "friction": 0.7,
+          "restitution": 0.05
+        },
+        "RayInteractable": {},
+        "DistanceGrabbable": {
+          "movementMode": "MoveTowardsTarget"
+        },
+        "AudioSource": {
+          "src": "./audio/tick.wav",
+          "volume": 0.8,
+          "refDistance": 0.5,
+          "maxInstances": 2
+        }
+      }
+    },
+    {
+      "id": "lab-menu",
+      "name": "Lab Menu",
+      "content": {
+        "type": "asset",
+        "asset": "lab-menu"
+      },
+      "transform": {
+        "position": [
+          0.55,
+          1.15,
+          -1.2
+        ],
+        "rotationDeg": [
+          0,
+          -25,
+          0
+        ],
+        "scale": 0.11
+      },
+      "components": {
+        "RayInteractable": {},
+        "PokeInteractable": {},
+        "AudioSource": {
+          "src": "./audio/chime.mp3",
+          "volume": 0.6,
+          "maxInstances": 3,
+          "playbackMode": "fade-restart"
+        }
+      }
+    },
+    {
+      "id": "key-light",
+      "name": "Key Light",
+      "transform": {
+        "position": [
+          -2.0,
+          3.4,
+          0.6
+        ],
+        "rotationDeg": [
+          -58,
+          -60,
+          0
+        ]
+      },
+      "components": {
+        "DirectionalLight": {
+          "color": [
+            1,
+            0.93,
+            0.82,
+            1
+          ],
+          "intensity": 2.1,
+          "castShadow": true,
+          "shadowMapSize": "2048",
+          "shadowCameraSize": 4,
+          "shadowCameraNear": 0.5,
+          "shadowCameraFar": 9,
+          "shadowRadius": 4,
+          "shadowBias": -0.0004,
+          "shadowNormalBias": 0.02
+        }
+      }
+    },
+    {
+      "id": "fill-light",
+      "name": "Fill Light",
+      "components": {
+        "HemisphereLight": {
+          "skyColor": [
+            0.95,
+            0.92,
+            0.86,
+            1
+          ],
+          "groundColor": [
+            0.45,
+            0.33,
+            0.24,
+            1
+          ],
+          "intensity": 0.9
+        }
+      }
+    },
+    {
+      "id": "ceiling-light",
+      "name": "Ceiling Light",
+      "transform": {
+        "position": [
+          0,
+          2.6,
+          -0.6
+        ]
+      },
+      "components": {
+        "PointLight": {
+          "color": [
+            1,
+            0.9,
+            0.76,
+            1
+          ],
+          "intensity": 3.0,
+          "distance": 6,
+          "decay": 2
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+<!--
+  Table tennis scoreboard, beside the net facing the player. TennisSystem
+  fills every element by id. No CSS comments inside the style block.
+-->
+<style>
+  .board {
+    flex-direction: column;
+    width: 460px;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    gap: 8px;
+  }
+
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mode {
+    color: #6b5a00;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  }
+
+  .mode:dark {
+    color: #e8c46a;
+  }
+
+  .scores {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .side {
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    gap: 2px;
+  }
+
+  .who {
+    color: #3a3b40;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .who:dark {
+    color: #dddfe3;
+  }
+
+  .num {
+    color: #1c1d20;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .num:dark {
+    color: #fafaf7;
+  }
+
+  .serve {
+    color: #1f7a46;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .serve:dark {
+    color: #7fe0a6;
+  }
+
+  .dash {
+    color: #6a6c73;
+    font-size: 48px;
+  }
+
+  .message {
+    color: #1c1d20;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .message:dark {
+    color: #fafaf7;
+  }
+
+  .hint {
+    color: #3a3b40;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .hint:dark {
+    color: #c9cbd1;
+  }
+</style>
+<Panel class="board">
+  <div class="top">
+    <div id="mode-text" class="mode">MATCH - MEDIUM</div>
+    <div id="rally-text" class="mode">RALLY 0</div>
+  </div>
+  <div class="scores">
+    <div class="side">
+      <div class="who">YOU</div>
+      <div id="player-score" class="num">0</div>
+      <div id="player-serve" class="serve">SERVING</div>
+    </div>
+    <div class="dash">-</div>
+    <div class="side">
+      <div class="who">COMPUTER</div>
+      <div id="cpu-score" class="num">0</div>
+      <div id="cpu-serve" class="serve">SERVING</div>
+    </div>
+  </div>
+  <div id="message-text" class="message">First to 11, win by two.</div>
+  <div id="hint-text" class="hint">Your serve: pull the trigger to toss the ball, then hit it.</div>
+</Panel>

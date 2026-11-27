@@ -1,0 +1,136 @@
+<!--
+  Norma Spatial Lab table menu. Panel, Button, ButtonIcon and ButtonLabel come
+  from the bundled Horizon kit; the icons are bundled Lucide components.
+  Dark styles apply because iwsdk.config.json prefers the dark scheme.
+
+  #build-text is bumped on every change, so whoever is in the headset can tell
+  after a refresh that they are looking at the latest version.
+
+  Note: the <style> block accepts no CSS comments. A comment there fails the
+  parse, and a failed panel stops the whole level loading (black screen).
+-->
+<style>
+  .panel-root {
+    flex-direction: column;
+    width: 380px;
+  }
+
+  .panel-content {
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 12px;
+  }
+
+  .eyebrow {
+    color: #6b5a00;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  }
+
+  .eyebrow:dark {
+    color: #e8c46a;
+  }
+
+  .heading {
+    color: #1c1d20;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+  }
+
+  .heading:dark {
+    color: #fafaf7;
+  }
+
+  .status {
+    color: #3a3b40;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .status:dark {
+    color: #dddfe3;
+  }
+
+  .build {
+    color: #6a6c73;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .build:dark {
+    color: #9a9ca3;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 22px;
+  }
+
+  .button {
+    justify-content: flex-start;
+  }
+
+  .button-label {
+    transform-translate-y: 1px;
+  }
+</style>
+<Panel class="panel-root">
+  <div class="panel-content">
+    <div class="eyebrow">NORMA SPATIAL LAB</div>
+    <div class="heading">Table menu</div>
+    <div id="status-text" class="status">Pick things up, stack them, deal the cards.</div>
+    <div id="build-text" class="build">Lab build 3 - table tennis added</div>
+  </div>
+  <div class="buttons">
+    <Button id="btn-deal" class="button">
+      <ButtonIcon>
+        <Spade></Spade>
+      </ButtonIcon>
+      <ButtonLabel class="button-label">Deal five cards</ButtonLabel>
+    </Button>
+    <Button id="btn-gather" class="button">
+      <ButtonIcon>
+        <Shuffle></Shuffle>
+      </ButtonIcon>
+      <ButtonLabel class="button-label">Gather and shuffle</ButtonLabel>
+    </Button>
+    <Button id="btn-height" class="button">
+      <ButtonIcon>
+        <ArrowUpDown></ArrowUpDown>
+      </ButtonIcon>
+      <ButtonLabel id="height-label" class="button-label">Table height: seated</ButtonLabel>
+    </Button>
+    <Button id="btn-reset" class="button">
+      <ButtonIcon>
+        <RotateCcw></RotateCcw>
+      </ButtonIcon>
+      <ButtonLabel class="button-label">Reset the room</ButtonLabel>
+    </Button>
+    <Button id="btn-tennis" class="button">
+      <ButtonIcon>
+        <Trophy></Trophy>
+      </ButtonIcon>
+      <ButtonLabel class="button-label">Play table tennis</ButtonLabel>
+    </Button>
+    <Button id="xr-button" class="button">
+      <ButtonIcon>
+        <RectangleGoggles></RectangleGoggles>
+      </ButtonIcon>
+      <ButtonLabel class="button-label">Enter VR</ButtonLabel>
+    </Button>
+    <Button id="exit-button" class="button" style="display: none">
+      <ButtonIcon>
+        <LogIn></LogIn>
+      </ButtonIcon>
+      <ButtonLabel class="button-label">Exit to browser</ButtonLabel>
+    </Button>
+  </div>
+</Panel>
