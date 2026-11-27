@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const qrcode = require('./qrcode-generator.js');
-const codes = { 'qr-home.svg': 'https://play.normaapps.com/', 'qr-kaito.svg': 'https://play.normaapps.com/kaito/' };
+const codes = { 'qr-home.svg': 'https://play.normaapps.com/', 'qr-ppm.svg': 'https://play.normaapps.com/ping-pong-masters/' };
 for (const [file, url] of Object.entries(codes)) {
   const q = qrcode(0, 'M');
   q.addData(url);
